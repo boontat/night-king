@@ -1,4 +1,5 @@
 var log = require('bunyan').createLogger({name: 'regression'});
+var exec = require('child_process').exec;
 
 module.exports = new (function() {
   var a = process.env.__NIGHTWATCH_ENV_KEY == 'chrome-a_1';
@@ -23,8 +24,23 @@ module.exports = new (function() {
         .url('https://www.google.com/')
         .url(function(result) {
           this.assert.equal(result.value, 'https://www.google.com/', 'Url is the same a2');
+
         })
-        .setValue('#lst-ib', 'this is from chrome a again')
+        .setValue('#lst-ib', 'this is from chrome a again');
+
+      // i need to run something
+      // exec('firefox https://en.wikipedia.org/wiki/Main_Page', (err, stdout)=>{
+      exec('ls', (err, stdout)=>{
+        if (err) {
+          throw err;
+        }
+
+        console.log('Launch finished');
+
+        console.log(stdout);
+      });
+
+      browser
         .pause(10000000)
         .end();
     }
@@ -89,7 +105,7 @@ module.exports = new (function() {
         .pause(9000) // wait longer to perform some other action
         .url('https://www.apple.com/')
         .url(function(result) {
-          this.assert.equal(result.value, 'https://www.apple.com/', 'Url is the same 2');
+          this.assert.equal(result.value, 'https://www.apple.com/', 'Url is the same d2');
         })
         .click('#ac-globalnav > div > ul.ac-gn-list > li.ac-gn-item.ac-gn-item-menu.ac-gn-search > a')// click search button
         .pause(5000)

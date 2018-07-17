@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nightwatch --env chrome-a,chrome-b"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "boontat",
+  "license": "MIT",
   "dependencies": {
     "bunyan": "^1.8.12",
     "nightwatch": "^0.9.21"
