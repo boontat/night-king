@@ -6,7 +6,7 @@
   "page_objects_path" : "",
   "globals_path" : "",
   "live_output" : true,
-  "parallel_process_delay" : 2500,
+  "parallel_process_delay" : 4000,
 
   "selenium" : {
     "start_process": true,
@@ -37,6 +37,28 @@
     },
 
     "chrome-b" : {
+      "desiredCapabilities" : {
+        "browserName" : "chrome",
+        "chromeOptions" : {
+          "args" : [
+            "--incognito"
+          ]
+        }
+      }
+    },
+
+    "chrome-c" : {
+      "desiredCapabilities" : {
+        "browserName" : "chrome",
+        "chromeOptions" : {
+          "args" : [
+            "--incognito"
+          ]
+        }
+      }
+    },
+
+    "chrome-d" : {
       "desiredCapabilities" : {
         "browserName" : "chrome",
         "chromeOptions" : {
