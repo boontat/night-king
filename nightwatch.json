@@ -1,0 +1,50 @@
+{
+  "src_folders" : ["tests"],
+  "output_folder" : "reports",
+  "custom_commands_path" : "",
+  "custom_assertions_path" : "",
+  "page_objects_path" : "",
+  "globals_path" : "",
+  "live_output" : true,
+  "parallel_process_delay" : 2500,
+
+  "selenium" : {
+    "start_process": true,
+    "server_path" : "./bin/selenium-server-standalone-3.9.1.jar",
+    "log_path" : "",
+    "cli_args" : {
+      "webdriver.chrome.driver" : "bin/chromedriver"
+    }
+  },
+
+  "test_settings" : {
+    "default" : {
+      "screenshots" : {
+        "enabled" : false,
+        "path" : "./screenshots"
+      }
+    },
+
+    "chrome-a" : {
+      "desiredCapabilities" : {
+        "browserName" : "chrome",
+        "chromeOptions" : {
+          "args" : [
+            "--incognito"
+          ]
+        }
+      }
+    },
+
+    "chrome-b" : {
+      "desiredCapabilities" : {
+        "browserName" : "chrome",
+        "chromeOptions" : {
+          "args" : [
+            "--incognito"
+          ]
+        }
+      }
+    }
+  }
+}
